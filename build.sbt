@@ -11,13 +11,18 @@ libraryDependencies ++= Seq(
   // https://mvnrepository.com/artifact/com.typesafe/config
   "com.typesafe" % "config" % "1.4.3",
 
+  // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+  "org.slf4j" % "slf4j-api" % "2.0.13",
+  // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+  "ch.qos.logback" % "logback-classic" % "1.5.5",
+
   // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
   "org.xerial" % "sqlite-jdbc" % "3.45.3.0",
 
+  // https://doc.akka.io/docs/akka-http/current/index.html
   "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion,
   "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
   "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
-
   "com.typesafe.akka" %% "akka-http-spray-json" % AkkaHttpVersion,
 
   // https://mvnrepository.com/artifact/org.scalatest/scalatest
