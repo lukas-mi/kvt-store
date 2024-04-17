@@ -4,7 +4,7 @@ Key Value Timestamp store POC
 Prerequisites:
 - [sbt](https://www.scala-sbt.org/) for building Scala code
 
-Run application:
+Run application on `localhost:8080`:
 - `sbt run`
 
 Run tests:
@@ -42,3 +42,7 @@ Implementations:
                   AND timestamp <= ?
           )
     ```
+
+TODO:
+  - Add tests for API
+  - Alternative implementation for a persistent store
