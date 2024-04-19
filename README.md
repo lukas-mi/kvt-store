@@ -12,7 +12,7 @@ Run tests:
 
 Implementations:
 - `InMemoryKVTStore` a in memory store based on a concurrent map where each key is associated with an ordered map structure with timestamp as the key (implemented as red-black tree)
-- `SQLiteKVTStore` a persistent store backed by SQLite embedded DB. Queries under the hood:
+  - `SQLiteKVTStore` a persistent store backed by SQLite embedded DB. Queries under the hood:
   - Table definition:
     ```sqlite
       CREATE TABLE IF NOT EXISTS kvt_store (
@@ -35,12 +35,8 @@ Implementations:
       FROM kvt_store
       WHERE key = ?
           AND timestamp <= ?
-          AND timestamp = (
-              SELECT MAX(timestamp)
-              FROM kvt_store
-              WHERE key = ?
-                  AND timestamp <= ?
-          )
+      ORDER BY timestamp DESC
+      LIMIT 1
     ```
 
 TODO:
