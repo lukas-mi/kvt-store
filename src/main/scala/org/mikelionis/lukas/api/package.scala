@@ -1,4 +1,4 @@
-package dk.tryk.kvt
+package org.mikelionis.lukas
 
 import spray.json.DefaultJsonProtocol._
 import spray.json.RootJsonFormat

@@ -1,4 +1,4 @@
-package dk.tryk.kvt.store
+package org.mikelionis.lukas.store
 
 import com.typesafe.config.ConfigFactory
 import org.scalatest.{BeforeAndAfterAll, BeforeAndAfterEach}

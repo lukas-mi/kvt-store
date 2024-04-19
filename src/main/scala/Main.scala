@@ -1,5 +1,5 @@
-import dk.tryk.kvt.api._
-import dk.tryk.kvt.store.SQLiteKVTStore
+import org.mikelionis.lukas.api.Service
+import org.mikelionis.lukas.store.SQLiteKVTStore
 
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.scaladsl.Behaviors

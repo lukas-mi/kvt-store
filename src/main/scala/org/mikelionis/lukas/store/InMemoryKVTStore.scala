@@ -1,6 +1,6 @@
-package dk.tryk.kvt.store
+package org.mikelionis.lukas.store
 
-import dk.tryk.kvt.Timestamp
+import org.mikelionis.lukas.Timestamp
 
 import java.util.concurrent.ConcurrentHashMap
 import scala.collection.{concurrent, mutable}

@@ -1,4 +1,4 @@
-package dk.tryk.kvt.store
+package org.mikelionis.lukas.store
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should

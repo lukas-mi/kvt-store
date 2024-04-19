@@ -1,6 +1,6 @@
-package dk.tryk.kvt.api
+package org.mikelionis.lukas.api
 
-import dk.tryk.kvt.store.KVTStore
+import org.mikelionis.lukas.store.KVTStore
 
 import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport._
 import akka.http.scaladsl.server.Directives._

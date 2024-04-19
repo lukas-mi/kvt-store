@@ -1,7 +1,8 @@
-package dk.tryk.kvt.store
+package org.mikelionis.lukas.store
+
+import org.mikelionis.lukas.Timestamp
 
 import com.typesafe.config.Config
-import dk.tryk.kvt.Timestamp
 
 import java.sql.{Connection, DriverManager}
 import scala.util.Using
@@ -53,13 +54,10 @@ object SQLiteKVTStore {
        |FROM $table
        |WHERE key = ?
        |  AND timestamp <= ?
-       |  AND timestamp = (
-       |    SELECT MAX(timestamp)
-       |    FROM $table
-       |    WHERE key = ?
-       |      AND timestamp <= ?
-       |  )
+       |ORDER BY timestamp DESC
+       |LIMIT 1
        |""".stripMargin
+
 }
 
 class SQLiteKVTStore(con: Connection, table: String) extends KVTStore[String, String] {
@@ -79,8 +77,6 @@ class SQLiteKVTStore(con: Connection, table: String) extends KVTStore[String, St
     Using.resource(con.prepareStatement(selectQuery(table))) { prepStmt =>
       prepStmt.setString(1, key)
       prepStmt.setLong(2, ts)
-      prepStmt.setString(3, key)
-      prepStmt.setLong(4, ts)
 
       Using.resource(prepStmt.executeQuery()) { rs =>
         if (rs.next()) Some(rs.getString("value")) else None
