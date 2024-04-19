@@ -11,8 +11,8 @@ Run tests:
 - `sbt test`
 
 Implementations:
-- `InMemoryKVTStore` a in memory store based on a concurrent map where each key is associated with an ordered map structure with timestamp as the key (implemented as red-black tree)
-  - `SQLiteKVTStore` a persistent store backed by SQLite embedded DB. Queries under the hood:
+- `InMemoryKVTStore`: an in memory store based on a concurrent map where each key is associated with an ordered map structure with timestamp as the key (implemented as red-black tree)
+- `SQLiteKVTStore`: a persistent store backed by SQLite embedded DB. Queries under the hood:
   - Table definition:
     ```sqlite
       CREATE TABLE IF NOT EXISTS kvt_store (
@@ -41,4 +41,4 @@ Implementations:
 
 TODO:
   - Add tests for API
-  - Alternative implementation for a persistent store
+  - Alternative implementation for a persistent store (e.g. with Redis)
